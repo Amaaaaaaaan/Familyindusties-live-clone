@@ -100,7 +100,7 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 13rem;
     padding-left: 9rem;
     margin-top: 3rem;
     position: fixed;
@@ -110,6 +110,12 @@ body {
 
 #nav1 img {
     height: 7rem;
+}
+
+#menu {
+    color: #ffffff;
+    font-size: 1.5vw;
+    display: none;
 }
 
 #nav2 {
@@ -175,6 +181,76 @@ button:hover::after {
 button:hover {
     color: white;
 }
+
+#menupage {
+    height: 100vh;
+    width: 100%;
+    background-color: #0F0F0F;
+    font-family: zuume;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 7rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    clip-path: circle(0% at 100% 0%);
+}
+
+#menupage.show {
+    transform: scale(1);
+    opacity: 1;
+    clip-path: circle(150%);
+}
+
+#menupage a,
+#menupage button {
+    text-decoration: none;
+    color: white;
+    line-height: 1.2;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#menupage button{
+    color: black;
+}
+
+#menupage.show a,
+#menupage.show button {
+    opacity: 1;
+}
+
+#menupage.show a:nth-child(1),
+#menupage.show button {
+    transition-delay: 0.2s;
+}
+
+#menupage.show a:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+#menupage.show a:nth-child(3) {
+    transition-delay: 0.6s;
+}
+
+#menupage.show a:nth-child(4) {
+    transition-delay: 0.8s;
+}
+
+#menupage.show a:nth-child(5) {
+    transition-delay: 1.0s;
+}
+
+
 
 #page1 {
     height: 80vh;
@@ -298,7 +374,41 @@ button:hover {
     #page1 {
         padding: 3rem 5rem;
     }
+    #nav {
+        height: 10vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 13rem;
+        padding-left: 9rem;
+        margin-top: 3rem;
+        position: fixed;
+        z-index: 9999999999999;
+        font-family: gilroy;
+        padding-right: 5%;
+    }
+#menu{
+    display: initial;
+    font-size: 5vh;
+}
+   
+    
+  
 
+
+    #nav img{
+        margin-left: -43%;
+    }
+    #nav2 {
+      display: none;
+    }
+    
+    
+    #nav button{
+        display: none;      
+    
+    }
     #left h1 {
         font-size: 15rem;
         line-height: 12rem;
@@ -318,9 +428,7 @@ button:hover {
 }
 
 @media (max-width: 900px) {
-    #nav {
-        display: none;
-    }
+   
 
     #page1 {
         height: auto;
@@ -328,7 +436,13 @@ button:hover {
         align-items: flex-start;
         padding: 2rem 3rem;
     }
-
+    #nav{
+        padding-right: 5%;
+    }
+    #menu{
+        display: initial;
+        font-size: 4vh;
+    }
     #left {
         width: 100%;
         margin-top: 5%;
@@ -370,7 +484,21 @@ button:hover {
         height: auto;
         padding: 1rem 2rem;
     }
-
+    #nav{
+        width: 100vw;
+        height: 8vw;
+        margin-top: 5%;
+       padding-right: 20px;
+    }
+    #nav img{
+        margin-left: -100%;
+        height: 5vh;
+    }
+    #menu{
+        display: initial;
+        font-size: 3vh;
+        margin-left: -30%;
+    }
     #left h1 {
         text-align: center;
         font-size: 10rem;
@@ -2564,7 +2692,7 @@ button:hover {
         font-size: 2vh;
     }
 
-   
+
 }
 
 @media (max-width: 768px) {
@@ -2588,14 +2716,16 @@ button:hover {
         font-size: 3vh;
     }
 
-    #ip p{
+    #ip p {
         width: 100%;
         font-size: 2.2vh;
     }
+
     #ip h2 {
         width: 100%;
         font-size: 2.5vh;
     }
+
     #page12 button {
         border-radius: 1.5rem;
         padding: 20px 24px;
@@ -2603,8 +2733,8 @@ button:hover {
         font-weight: 300;
         font-size: 2.5vh;
     }
-    
-    
+
+
 }
 
 @media (max-width: 480px) {
@@ -2614,9 +2744,11 @@ button:hover {
         padding-left: 4%;
         padding-right: 4%;
     }
-    #ip{
+
+    #ip {
         height: 90vh;
     }
+
     #ip {
         width: 100%;
     }
@@ -2626,17 +2758,20 @@ button:hover {
         width: 100%;
         border-radius: 10px;
     }
-     #ip h1{
+
+    #ip h1 {
         width: 80%;
         font-size: 3vh;
         margin-left: -20%;
-     }
+    }
+
     #ip p,
     #ip h2 {
         width: 80%;
         margin-left: -20%;
         font-size: 2vh;
     }
+
     #page12 button {
         border-radius: 1.5rem;
         padding: 10px 12px;
@@ -2645,13 +2780,13 @@ button:hover {
         font-size: 2.5vh;
         border-radius: 10px;
     }
-   
+
 }
 
 
 
 #page13 {
-    height: 140vh;
+    height: 100vh;
     width: 100%;
     background-color: #0F0F0F;
     display: flex;
@@ -2663,7 +2798,7 @@ button:hover {
 #b1 {
     height: 90vh;
     width: 43vw;
-
+    margin-top: 5%;
     background-image: url(https://familyindustrieslive.com/wp-content/uploads/2023/03/Frame-21-04-2023-01-26-46.jpg);
     background-position: center;
     background-size: cover;
@@ -2675,7 +2810,7 @@ button:hover {
 #b2 {
     height: 90vh;
     width: 43vw;
-
+    margin-top: 5%;
     background-image: url(https://familyindustrieslive.com/wp-content/uploads/2023/03/IMG_3449.jpeg);
     background-position: center;
     background-size: cover;
@@ -2693,7 +2828,8 @@ button:hover {
     align-items: center;
     overflow: hidden;
 }
-#page13 h1{
+
+#page13 h1 {
     font-size: 5vh;
 }
 
@@ -2759,71 +2895,88 @@ button:hover {
     #page13 {
         height: auto;
     }
-    #b1, #b2 {
-        height: 70vh; 
-        width: 45vw; 
-        rotate: 10deg; 
+
+    #b1,
+    #b2 {
+        height: 70vh;
+        width: 45vw;
+        rotate: 10deg;
     }
 
     #b1 {
         margin-left: 5%;
-        rotate: -10deg; 
+        rotate: -10deg;
         margin-top: -5%;
     }
 
     #anp {
-        margin-top: 50%; /* Adjust margin */
+        margin-top: 50%;
+        /* Adjust margin */
     }
 
     #anp svg {
-        margin-left: 2vh; /* Adjust margins */
+        margin-left: 2vh;
+        /* Adjust margins */
         margin-right: 2vh;
     }
 
     #anpp {
-        animation: 60s slidessss infinite linear; /* Adjust animation speed */
+        animation: 60s slidessss infinite linear;
+        /* Adjust animation speed */
     }
+
     #anpppp {
-        height: 8vh; /* Adjust height */
-        margin-top: 50%; /* Adjust margin */
+        height: 8vh;
+        /* Adjust height */
+        margin-top: 50%;
+        /* Adjust margin */
     }
 
     #anpppppppp {
-        animation: 50s slidesssss infinite linear; /* Adjust animation speed */
-        gap: 3px; /* Adjust gap */
+        animation: 50s slidesssss infinite linear;
+        /* Adjust animation speed */
+        gap: 3px;
+        /* Adjust gap */
     }
 
     #anpppp svg {
-        margin-left: 3vh; /* Adjust margins */
+        margin-left: 3vh;
+        /* Adjust margins */
         margin-right: 3vh;
     }
 }
 
 @media (max-width: 768px) {
     #page13 {
-     height: 80vh;
+        height: 80vh;
     }
 
-    #b1, #b2 {
-        height: 60vh; /* Adjust height */
-        width: 45vw; /* Adjust width */
-        rotate: 10deg; /* Remove rotation */
+    #b1,
+    #b2 {
+        height: 60vh;
+        /* Adjust height */
+        width: 45vw;
+        /* Adjust width */
+        rotate: 10deg;
+        /* Remove rotation */
     }
 
     #b1 {
         margin-left: 3%;
-        rotate: -10deg; 
+        rotate: -10deg;
     }
 
     #anp {
-        height: 6vh; /* Adjust height */
-        margin-top: 55%; /* Adjust margin */
+        height: 6vh;
+        /* Adjust height */
+        margin-top: 55%;
+        /* Adjust margin */
     }
 
-    #page13 h1{
+    #page13 h1 {
         font-size: 3vh;
     }
-    
+
     #page13 svg {
         height: 3vh;
         margin-left: 4vh;
@@ -2831,20 +2984,27 @@ button:hover {
     }
 
     #anpp {
-        animation: 50s slidessss infinite linear; /* Adjust animation speed */
+        animation: 50s slidessss infinite linear;
+        /* Adjust animation speed */
     }
+
     #anpppp {
-        height: 6vh; /* Adjust height */
-        margin-top: 55%; /* Adjust margin */
+        height: 6vh;
+        /* Adjust height */
+        margin-top: 55%;
+        /* Adjust margin */
     }
 
     #anpppppppp {
-        animation: 40s slidesssss infinite linear; /* Adjust animation speed */
-        gap: 2px; /* Adjust gap */
+        animation: 40s slidesssss infinite linear;
+        /* Adjust animation speed */
+        gap: 2px;
+        /* Adjust gap */
     }
 
     #anpppp svg {
-        margin-left: 2vh; /* Adjust margins */
+        margin-left: 2vh;
+        /* Adjust margins */
         margin-right: 2vh;
     }
 }
@@ -2856,23 +3016,31 @@ button:hover {
         padding-right: 20px;
     }
 
-    #b1, #b2 {
-        height: 23vh; /* Adjust height */
-        width: 70vw; /* Adjust width */
-        rotate: 10deg; /* Remove rotation */
-    }
-#b1{
-    rotate: -10deg; 
-}
-    #anp {
-        height: 4vh; /* Adjust height */
-        margin-top: 40%; /* Adjust margin */
+    #b1,
+    #b2 {
+        height: 23vh;
+        /* Adjust height */
+        width: 70vw;
+        /* Adjust width */
+        rotate: 10deg;
+        /* Remove rotation */
     }
 
-    #page13 h1{
+    #b1 {
+        rotate: -10deg;
+    }
+
+    #anp {
+        height: 4vh;
+        /* Adjust height */
+        margin-top: 40%;
+        /* Adjust margin */
+    }
+
+    #page13 h1 {
         font-size: 2vh;
     }
-    
+
     #page13 svg {
         height: 2vh;
         margin-left: 1vh;
@@ -2880,20 +3048,27 @@ button:hover {
     }
 
     #anpp {
-        animation: 80s slidessss infinite linear; /* Adjust animation speed */
+        animation: 80s slidessss infinite linear;
+        /* Adjust animation speed */
     }
+
     #anpppp {
-        height: 4vh; /* Adjust height */
-        margin-top: 40%; /* Adjust margin */
+        height: 4vh;
+        /* Adjust height */
+        margin-top: 40%;
+        /* Adjust margin */
     }
 
     #anpppppppp {
-        animation: 80s slidesssss infinite linear; /* Adjust animation speed */
-        gap: 1px; /* Adjust gap */
+        animation: 80s slidesssss infinite linear;
+        /* Adjust animation speed */
+        gap: 1px;
+        /* Adjust gap */
     }
 
     #anpppp svg {
-        margin-left: 1.5vh; /* Adjust margins */
+        margin-left: 1.5vh;
+        /* Adjust margins */
         margin-right: 1.5vh;
     }
 }
@@ -2934,9 +3109,9 @@ button:hover {
 #lo h3 {
     color: rgb(154, 154, 154);
     margin-top: 20%;
-    font-weight: 400;
+    font-weight: 600;
     width: 150%;
-    font-size: 2.7vh;
+    font-size: 2.2vh;
 }
 
 #exper {
@@ -2946,7 +3121,7 @@ button:hover {
     background-color: #beb1b100;
     margin-top: -20%;
     font-family: gilroy;
-    font-size: 2vh;
+    font-size: 1.6vh;
     margin-left: 33%;
     margin-top: -15%;
     flex-direction: column;
@@ -2955,9 +3130,10 @@ button:hover {
     color: white;
 }
 
-#exper h1 {
+
+#page14 h1 {
     font-weight: 500;
-    font-size: 3.2vh;
+    font-size: 2.7vh;
 }
 
 #exper h2 {
@@ -2974,7 +3150,7 @@ button:hover {
     margin-top: -20%;
     font-family: gilroy;
     font-size: 2vh;
-    margin-left: 50%;
+    margin-left: 47%;
     margin-top: -15%;
     flex-direction: column;
     display: flex;
@@ -2982,9 +3158,26 @@ button:hover {
     color: white;
 }
 
-#about h1 {
-    font-weight: 500;
-    font-size: 3.2vh;
+#page14 #bbbb1 button::after {
+    content: "";
+    height: 20rem;
+    width: 20rem;
+    background-color: #CB5CFF;
+    position: absolute;
+    margin-top: -1rem;
+    left: -25%;
+    scale: 0;
+    transition: all linear 0.2s;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+#page14 #bbbb1 button:hover::after {
+    scale: 6;
+}
+
+#page14 #bbbb1 button:hover {
+    color: white;
 }
 
 #about h2 {
@@ -3009,10 +3202,6 @@ button:hover {
     color: white;
 }
 
-#contact h1 {
-    font-weight: 400;
-    font-size: 3vh;
-}
 
 #contact h2 {
     font-size: 2.5vh;
@@ -3035,4 +3224,330 @@ button:hover {
     margin-top: -5%;
     font-size: 2.5vh;
     padding: 20px 70px;
+}
+
+@media (max-width: 800px) {
+    #page14 {
+        height: 250vh;
+        padding: 20px;
+        font-family: gilroy;
+    }
+
+    #page14 img {
+        height: 6vh;
+        margin-left: 0;
+        margin-top: 10%;
+    }
+
+    #lo {
+        height: auto;
+        width: 100%;
+        padding: 10px;
+        margin-left: -3%;
+        background-color: #5ca8ff00;
+        margin-top: 3rem;
+    }
+
+    #lo i {
+        font-size: 2vh;
+        color: white;
+        border: 1px solid rgb(117, 117, 117);
+        border-radius: 50px;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    #lo h3 {
+        color: rgb(154, 154, 154);
+        font-weight: 400;
+        font-size: 2vh;
+        margin-left: 2%;
+        width: 100%;
+        margin-top: 15%;
+    }
+
+    #exper {
+        height: auto;
+        width: 100%;
+        margin-left: 2%;
+        background-color: #beb1b100;
+        font-family: gilroy;
+        font-size: 1.8vh;
+        margin-top: 55%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        color: white;
+    }
+
+    #about {
+        height: auto;
+        width: 100%;
+        background-color: #beb1b100;
+        font-family: gilroy;
+        font-size: 2vh;
+        margin-top: 130%;
+        margin-left: 2%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        color: white;
+    }
+
+    #contact {
+        height: auto;
+        width: 100%;
+        background-color: #beb1b100;
+        font-family: gilroy;
+        font-size: 2vh;
+        margin-top: 170%;
+        margin-left: 2%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        color: white;
+    }
+
+    #exper h1,
+    #about h1,
+    #contact h1 {
+        font-weight: 500;
+        font-size: 2.5vh;
+    }
+
+    #exper h2,
+    #about h2,
+    #contact h2 {
+        font-size: 2vh;
+        line-height: 1.6;
+        font-weight: 400;
+        color: gray;
+    }
+
+
+    #bbb1 {
+        font-size: 2vh;
+        color: #282828;
+        margin-left: 0;
+        margin-top: 30%;
+        padding: 20px 15px;
+        width: 90%;
+        border-radius: 15px;
+    }
+
+    #bbbb1 {
+        font-size: 2vh;
+        color: #282828;
+        position: absolute;
+        margin-left: 0;
+        margin-top: 10%;
+        padding: 20px 15px;
+        width: 90%;
+        border-radius: 15px;
+    }
+    #page14 #bbbb1 button::after {
+        content: "";
+        height: 25rem;
+        width: 25rem;
+        background-color: #CB5CFF;
+        position: absolute;
+        margin-top: -1rem;
+        left: -50%;
+        scale: 0;
+        transition: all linear 0.2s;
+        border-radius: 50%;
+        z-index: -1;
+    }
+    
+    #page14 #bbbb1 button:hover::after {
+        scale: 6;
+    }
+    
+    #page14 #bbbb1 button:hover {
+        color: white;
+    }
+    #page14 #bbb1 button::after {
+        content: "";
+        height: 40px;
+        width: 40px;
+        background-color: #CB5CFF;
+        position: absolute;
+        margin-top: -1rem;
+        left: -50%;
+        scale: 0;
+        transition: all linear 0.2s;
+        border-radius: 50%;
+        z-index: -1;
+    }
+    
+    #page14 #bbb1 button:hover::after {
+        scale: 6;
+    }
+    
+    #page14 #bbb1 button:hover {
+        color: white;
+    }
+}
+
+@media (max-width: 600px) {
+    #page14 {
+        height: 150vh;
+        padding: 20px;
+        font-family: gilroy;
+    }
+
+    #page14 img {
+        height: 6vh;
+        margin-left: 0;
+        margin-top: 10%;
+    }
+
+    #lo {
+        height: auto;
+        width: 100%;
+        padding: 10px;
+        margin-left: -3%;
+        background-color: #5ca8ff00;
+        margin-top: 3rem;
+    }
+
+    #lo i {
+        font-size: 2vh;
+        color: white;
+        border: 1px solid rgb(117, 117, 117);
+        border-radius: 50px;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    #lo h3 {
+        color: rgb(154, 154, 154);
+        font-weight: 400;
+        font-size: 2vh;
+        margin-left: 2%;
+        width: 100%;
+        margin-top: 15%;
+    }
+
+    #exper {
+        height: auto;
+        width: 100%;
+        margin-left: 2%;
+        background-color: #beb1b100;
+        font-family: gilroy;
+        font-size: 1.8vh;
+        margin-top: 55%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        color: white;
+    }
+
+    #about {
+        height: auto;
+        width: 100%;
+        background-color: #beb1b100;
+        font-family: gilroy;
+        font-size: 2vh;
+        margin-top: 130%;
+        margin-left: 2%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        color: white;
+    }
+
+    #contact {
+        height: auto;
+        width: 100%;
+        background-color: #beb1b100;
+        font-family: gilroy;
+        font-size: 2vh;
+        margin-top: 170%;
+        margin-left: 2%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        color: white;
+    }
+
+    #exper h1,
+    #about h1,
+    #contact h1 {
+        font-weight: 500;
+        font-size: 2.5vh;
+    }
+
+    #exper h2,
+    #about h2,
+    #contact h2 {
+        font-size: 2vh;
+        line-height: 1.6;
+        font-weight: 400;
+        color: gray;
+    }
+
+
+    #bbb1 {
+        font-size: 2vh;
+        color: #282828;
+        margin-left: 0;
+        margin-top: 30%;
+        padding: 20px 15px;
+        width: 90%;
+        border-radius: 15px;
+    }
+
+    #bbbb1 {
+        font-size: 2vh;
+        color: #282828;
+        position: absolute;
+        margin-left: 0;
+        margin-top: 10%;
+        padding: 20px 15px;
+        width: 90%;
+        border-radius: 15px;
+    }
+    #page14 #bbbb1 button::after {
+        content: "";
+        height: 25rem;
+        width: 25rem;
+        background-color: #CB5CFF;
+        position: absolute;
+        margin-top: -1rem;
+        left: -50%;
+        scale: 0;
+        transition: all linear 0.2s;
+        border-radius: 50%;
+        z-index: -1;
+    }
+    
+    #page14 #bbbb1 button:hover::after {
+        scale: 6;
+    }
+    
+    #page14 #bbbb1 button:hover {
+        color: white;
+    }
+    #page14 #bbb1 button::after {
+        content: "";
+        height: 40px;
+        width: 40px;
+        background-color: #CB5CFF;
+        position: absolute;
+        margin-top: -1rem;
+        left: -50%;
+        scale: 0;
+        transition: all linear 0.2s;
+        border-radius: 50%;
+        z-index: -1;
+    }
+    
+    #page14 #bbb1 button:hover::after {
+        scale: 6;
+    }
+    
+    #page14 #bbb1 button:hover {
+        color: white;
+    }
 }

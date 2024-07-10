@@ -346,3 +346,9 @@ gsap.from("#page8 img", {
 }
 )
 
+const menu = document.querySelector("#menu");
+
+menu.addEventListener("click", function() {
+    const menuPage = document.querySelector("#menupage");
+    menuPage.classList.toggle("show");
+});
