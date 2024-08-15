@@ -29,24 +29,28 @@ function toggleMenu() {
 var tl1 = gsap.timeline()
 tl1.from("#linee", {
     x: -2000,
-    duration: 0.1,
+    duration: 2.5,
 },"yo")
 tl1.to("#leleph", {
-    duration: 0.1,
+    duration: 0.3,
     filter: "drop-shadow(0px 0px 55px rgba(0, 213, 255, 0.5))",
     repeat: 6,
     yoyo: true
 },"yo");
 tl1.to("#llive", {
-    duration: 0.1,
+    duration: 0.3,
     filter: "drop-shadow(0px 0px 55px rgba(255, 0, 238, 0.5))",
     repeat: 6,
     yoyo: true
 },"yo");
 tl1.to("#loader", {
     opacity:0,
-    duration:0.01,
+    duration:0.05,
 },"ro");
+
+
+
+
 
 
 
@@ -55,26 +59,27 @@ var tl2 = gsap.timeline({ paused: true })
 
 tl2.from("#nav", {
     y: -100,
-    duration: .1,
+    duration: .7,
     delay:0.3,
 }, "xo")
 tl2.from("#left h1", {
     x: -800,
-    duration: 0.1,
+    duration: 0.7,
     delay:0.3
 }, "xo")
 tl2.from("#left p", {
     y: 200,
-    duration: 0.1,
+    duration: 0.3,
 },)
 tl2.from("#right video", {
     y: 1100,
-    duration: 0.1,
+    duration: 0.5,
     delay:0.3
 }, "xo")
 tl1.eventCallback("onComplete", function() {
     tl2.play(); // Start the second timeline
 });
+
 
 gsap.to("#page2 h1", {
     y: -20,
